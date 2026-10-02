@@ -1,0 +1,6 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Signis.Cli/Signis.Cli.csproj" />
+    <Project Path="src/Signis.Engine/Signis.Engine.csproj" />
+  </Folder>
+</Solution>
