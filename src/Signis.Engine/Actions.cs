@@ -52,6 +52,8 @@ public static class Executor {
     }
 
     private static bool IsWordCountInRange(string user_input, (ushort, ushort) range) {
+        if(range.Item1 == 0 && range.Item2 == 0) return true;
+
         var word_count = ParseHelper.Words(user_input).Length;
         var lower_in_range = range.Item1 == 0 || word_count >= range.Item1;
         var upper_in_range = range.Item2 == 0 || word_count <= range.Item2;
