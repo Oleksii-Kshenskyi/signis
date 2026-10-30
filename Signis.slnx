@@ -1,6 +1,8 @@
 <Solution>
   <Folder Name="/src/">
-    <Project Path="src/Signis.Cli/Signis.Cli.csproj" />
-    <Project Path="src/Signis.Engine/Signis.Engine.csproj" />
+    <Project Path="src/Signis.Adapters/Signis.Adapters.fsproj" />
+    <Project Path="src/Signis.CLI/Signis.CLI.fsproj" />
+    <Project Path="src/Signis.Contracts/Signis.Contracts.fsproj" />
+    <Project Path="src/Signis.Core/Signis.Core.fsproj" />
   </Folder>
 </Solution>

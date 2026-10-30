@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Signis.Core\Signis.Core.fsproj" />
+    <ProjectReference Include="..\Signis.Contracts\Signis.Contracts.fsproj" />
+    <ProjectReference Include="..\Signis.Adapters\Signis.Adapters.fsproj" />
+  </ItemGroup>
+
+</Project>

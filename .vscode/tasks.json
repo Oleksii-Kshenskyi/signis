@@ -7,11 +7,36 @@
             "type": "process",
             "args": [
                 "build",
-                "${workspaceFolder}/src/Signis.Cli/Signis.Cli.csproj",
+                "${workspaceFolder}/src/Signis.CLI/Signis.CLI.fsproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary;ForceNoAlign"
             ],
             "problemMatcher": "$msCompile"
+        },
+        {
+            "label": "Run SIGNIS",
+            "detail": "Build, then run in the terminal",
+            "dependsOn": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "run",
+                "--no-build",
+                "--project",
+                "${workspaceFolder}/src/Signis.CLI/Signis.CLI.fsproj"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": [],
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "dedicated",
+                "clear": true,
+                "showReuseMessage": false
+            }
         },
         {
             "label": "publish",
@@ -19,7 +44,7 @@
             "type": "process",
             "args": [
                 "publish",
-                "${workspaceFolder}/src/Signis.Cli/Signis.Cli.csproj",
+                "${workspaceFolder}/src/Signis.CLI/Signis.CLI.fsproj",
                 "/property:GenerateFullPaths=true",
                 "/consoleloggerparameters:NoSummary;ForceNoAlign"
             ],
@@ -33,7 +58,7 @@
                 "watch",
                 "run",
                 "--project",
-                "${workspaceFolder}/src/Signis.Cli/Signis.Cli.csproj"
+                "${workspaceFolder}/src/Signis.CLI/Signis.CLI.fsproj"
             ],
             "problemMatcher": "$msCompile"
         }
