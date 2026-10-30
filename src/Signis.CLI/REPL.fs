@@ -1,4 +1,6 @@
-﻿open Signis.Core
+﻿open System
+
+open Signis.Core
 
 /// This is the CLI module. Main purpose is: REPL, CLI interface, IO.
 /// IO, imperative code and any other impurities are allowed here.
@@ -13,10 +15,13 @@
 /// constructor/consumer module.
 
 module REPL = 
-    let main () = 
-        printfn "Hello from F#"
-        let what = "KEKW"
-        Say.hello what
-        printfn "After things"
+    let rec main () = 
+        printf "<SIGNIST>> "
+        let userInput = 
+            Console.ReadLine ()
+            |> Option.ofObj
+            |> Option.defaultValue "ERROR: ReadLine returned null!"
+        printfn "Echoed: %s" userInput
+        main ()
     
     main ()

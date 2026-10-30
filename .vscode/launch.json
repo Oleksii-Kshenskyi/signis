@@ -4,18 +4,10 @@
         {
             "name": "Debug SIGNIS",
             "type": "coreclr",
-            "request": "launch",
-            "preLaunchTask": "build",
-            "program": "${workspaceFolder}/src/Signis.CLI/bin/Debug/net10.0/Signis.CLI.dll",
-            "args": [],
-            "cwd": "${workspaceFolder}",
-            "console": "integratedTerminal",
-            "stopAtEntry": false
-        },
-        {
-            "name": "Attach to signis",
-            "type": "coreclr",
-            "request": "attach"
+            "request": "attach",
+            "preLaunchTask": "Run SIGNIS (Debug Target)",
+            "postDebugTask": "Stop SIGNIS (Debug Target)",
+            "processId": "${command:pickProcess}"
         }
     ]
 }

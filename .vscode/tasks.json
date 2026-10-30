@@ -39,6 +39,50 @@
             }
         },
         {
+            "label": "Run SIGNIS (Debug Target)",
+            "detail": "Build, then start in terminal for debugger attach",
+            "dependsOn": "build",
+            "command": "${workspaceFolder}/src/Signis.CLI/bin/Debug/net10.0/Signis.CLI",
+            "type": "process",
+            "isBackground": true,
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "problemMatcher": {
+                "pattern": {
+                    "regexp": "^$"
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": "^.*",
+                    "endsPattern": ".*"
+                }
+            },
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "dedicated",
+                "clear": true,
+                "showReuseMessage": false
+            }
+        },
+        {
+            "label": "Stop SIGNIS (Debug Target)",
+            "command": "pkill",
+            "type": "process",
+            "args": [
+                "-f",
+                "src/Signis.CLI/bin/Debug/net10.0/Signis.CLI"
+            ],
+            "problemMatcher": [],
+            "presentation": {
+                "echo": false,
+                "reveal": "never",
+                "close": true
+            }
+        },
+        {
             "label": "publish",
             "command": "dotnet",
             "type": "process",
