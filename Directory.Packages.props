@@ -1,0 +1,10 @@
+<Project>
+  <PropertyGroup>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <CentralPackageTransitivePinningEnabled>true</CentralPackageTransitivePinningEnabled>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageVersion Include="FSharpPlus" Version="1.9.1" />
+    <PackageVersion Include="FSharp.Core" Version="10.0.100" />
+  </ItemGroup>
+</Project>

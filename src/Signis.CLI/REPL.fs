@@ -1,4 +1,5 @@
 ﻿open System
+open FSharpPlus
 
 open Signis.Core
 
@@ -14,14 +15,20 @@ open Signis.Core
 /// Does not contain logic or computations, is an impure 
 /// constructor/consumer module.
 
-module REPL = 
+module REPL =
+    // let parseCommand (userInput: string) =
+    //    match userInput.StartsWith ""
+
     let rec main () = 
         printf "<SIGNIST>> "
         let userInput = 
             Console.ReadLine ()
             |> Option.ofObj
-            |> Option.defaultValue "ERROR: ReadLine returned null!"
+            |> Option.defaultValue "<NULL>"
+            |> String.trimWhiteSpaces
         printfn "Echoed: %s" userInput
+        printfn "Skipped first word: %s" (Util.dropFirstWord userInput)
+        printfn "First word was: %s" (Util.firstWord userInput)
         main ()
     
     main ()

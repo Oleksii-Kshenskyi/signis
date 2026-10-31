@@ -11,6 +11,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Signis.Contracts\Signis.Contracts.fsproj" />
+
+    <PackageReference Include="FSharpPlus" />
   </ItemGroup>
 
 </Project>
