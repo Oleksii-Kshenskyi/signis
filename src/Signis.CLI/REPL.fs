@@ -1,4 +1,6 @@
-﻿open System
+﻿namespace Signis.CLI
+
+open System
 open FSharpPlus
 
 open Signis.Core
@@ -16,19 +18,27 @@ open Signis.Core
 /// constructor/consumer module.
 
 module REPL =
-    // let parseCommand (userInput: string) =
-    //    match userInput.StartsWith ""
+    let actOnCommand (cmd: REPLActionType) =
+        match cmd with
+        | Echo what -> $"Echoed: `{what}`"
+        | Unknown what -> Constants.unknownMessage what
+        | Empty -> ""
+        | Exit msg ->
+            printfn "%s" msg
+            Environment.Exit 0
+            ""
 
     let rec main () = 
-        printf "<SIGNIST>> "
+        printf "<SIGNIS>> "
         let userInput = 
             Console.ReadLine ()
             |> Option.ofObj
             |> Option.defaultValue "<NULL>"
             |> String.trimWhiteSpaces
-        printfn "Echoed: %s" userInput
-        printfn "Skipped first word: %s" (Util.dropFirstWord userInput)
-        printfn "First word was: %s" (Util.firstWord userInput)
+        Parse.command userInput
+        |> actOnCommand
+        |> printfn "%s"
+
         main ()
-    
+
     main ()

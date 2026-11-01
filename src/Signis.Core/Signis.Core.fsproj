@@ -1,11 +1,11 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Util.fs" />
-    <Compile Include="Library.fs" />
+    <Compile Include="Interface.fs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Signis.Contracts\Signis.Contracts.fsproj" />

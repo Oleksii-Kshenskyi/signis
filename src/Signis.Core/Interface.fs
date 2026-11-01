@@ -13,6 +13,6 @@
 /// SIGNIS.Core.Interface module is the public-facing API of the Core assembly.
 /// SIGNIS.Core.DomainTypes should be treated as the domain specification of the game.
 
-module Say =
+module Interface =
     let hello name =
         printfn "Hello %s" name
